@@ -24,7 +24,7 @@ const getPricesUber = async ({
       cookie: process.env.COOKIE_UBER,
       "Referrer-Policy": "strict-origin-when-cross-origin",
     },
-    body: `{"operationName":"FareEstimate","variables":{"destination":{"latitude":${dropLat},"longitude":${dropLong}},"pickupLocation":{"latitude":${pickUpLat},"longitude":${pickUpLong}},"vehicleViewIds":[11803,20022265,20034913],"synced":true},"query":"query FareEstimate($pickupLocation: InputLocation!, $destination: InputLocation, $pickupTimeMS: Float, $targetProductType: EnumTargetProductType, $vehicleViewIds: [Int!]!) {\\n  fareEstimate(pickupLocation: $pickupLocation, destination: $destination, pickupTimeMS: $pickupTimeMS, targetProductType: $targetProductType, vehicleViewIds: $vehicleViewIds) {\\n    ...FareEstimateFragment\\n    __typename\\n  }\\n}\\n\\nfragment FareEstimateFragment on FareEstimateReturn {\\n  fares\\n  vehicleViewsOrder\\n  __typename\\n}\\n"}`,
+    body: `{"operationName":"FareEstimate","variables":{"destination":{"latitude":${dropLat},"longitude":${dropLong}},"pickupLocation":{"latitude":${pickUpLat},"longitude":${pickUpLong}},"vehicleViewIds":[],"synced":true},"query":"query FareEstimate($pickupLocation: InputLocation!, $destination: InputLocation, $pickupTimeMS: Float, $targetProductType: EnumTargetProductType, $vehicleViewIds: [Int!]!) {\\n  fareEstimate(pickupLocation: $pickupLocation, destination: $destination, pickupTimeMS: $pickupTimeMS, targetProductType: $targetProductType, vehicleViewIds: $vehicleViewIds) {\\n    ...FareEstimateFragment\\n    __typename\\n  }\\n}\\n\\nfragment FareEstimateFragment on FareEstimateReturn {\\n  fares\\n  vehicleViewsOrder\\n  __typename\\n}\\n"}`,
     method: "POST",
   });
 

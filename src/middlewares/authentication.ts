@@ -20,6 +20,7 @@ export class Auth {
     const parts = token.split(" ");
 
     const [scheme, tokenValid] = parts;
+  
     jwt.verify(tokenValid, pass, (err, decoded) => {
       if (err) {
         return response

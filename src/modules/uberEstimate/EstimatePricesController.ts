@@ -19,6 +19,7 @@ export class EstimatePricesController {
       latDropOff,
       longDropOff
     );
+    
     return response.json(data).status(200);
   }
 }
