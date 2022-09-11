@@ -13,7 +13,7 @@ const estimatePricesController = new EstimatePricesController();
 //API ROUTES
 router.get(
   "/api/get-prices/:dropoff/:pickup",
- // auth.authMiddleware,
+  auth.authMiddleware,
   estimatePricesController.getPricesUber
 );
 
