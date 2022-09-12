@@ -14,7 +14,7 @@ export class EstimatePriceUberService {
       dropLong,
     });
 
-    let prices: string = "";
+    let prices: Array<string> = [];
 
     await request.json().then((json) => {
       let fares: any;
@@ -29,20 +29,15 @@ export class EstimatePriceUberService {
         if (Object.prototype.hasOwnProperty.call(fares, key)) {
           const element = fares[key];
           if (key == "20022263" || key ==  "20041757") {
-            prices += `
-            😃Comfort: ${element.fare}`;
+            prices.push(`😃Comfort: ${element.fare}`);
           } else if (key == "11047") {
-            prices += `
-            😄UberX: ${element.fare}`;
+            prices.push(`😄UberX: ${element.fare}`);
           } else if (key == "20004791") {
-            prices += `
-            😁VIP: ${element.fare}`;
+            prices.push(`😁VIP: ${element.fare}`);
           } else if (key == "20034909") {
-            prices += `
-            😁Moto: ${element.fare}`;
+            prices.push(`😁Moto: ${element.fare}`);
           }else if (key == "20042669") {
-            prices += `
-            😁Black: ${element.fare}`;
+            prices.push(`😁Black: ${element.fare}`);
           }
         }
       }
