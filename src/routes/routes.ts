@@ -11,8 +11,8 @@ const router = Router();
 const estimatePricesController = new EstimatePricesController();
 
 router.use(
-  "/api",
-    //auth.authMiddleware
+  "/apis",
+    auth.authMiddleware
 
 )
 //API ROUTES
