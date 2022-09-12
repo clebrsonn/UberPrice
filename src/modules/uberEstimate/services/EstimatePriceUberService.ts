@@ -29,15 +29,15 @@ export class EstimatePriceUberService {
         if (Object.prototype.hasOwnProperty.call(fares, key)) {
           const element = fares[key];
           if (key == "20022263" || key ==  "20041757") {
-            prices.push(`😃Comfort: ${element.fare}`);
+            prices.push(`😃 Comfort: ${element.fare}`);
           } else if (key == "11047") {
-            prices.push(`😄UberX: ${element.fare}`);
+            prices.push(`😄   UberX: ${element.fare}`);
           } else if (key == "20004791") {
-            prices.push(`😁VIP: ${element.fare}`);
+            prices.push(`😁     VIP: ${element.fare}`);
           } else if (key == "20034909") {
-            prices.push(`😁Moto: ${element.fare}`);
+            prices.push(`😁    Moto: ${element.fare}`);
           }else if (key == "20042669") {
-            prices.push(`😁Black: ${element.fare}`);
+            prices.push(`😁   Black: ${element.fare}`);
           }
         }
       }
