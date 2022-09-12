@@ -5,7 +5,8 @@ export class EstimatePricesController {
   async getPricesUber(request: Request, response: Response) {
     const { pickup, dropoff } = request.params;
 
-    const dropOffCoordinates = dropoff.split(",");
+    const dropOffCoordinates = dropoff? dropoff.split(","): String(process.env.HOME).split(",");
+    
     const latDropOff = String(dropOffCoordinates[0]);
     const longDropOff = String(dropOffCoordinates[1]);
 
@@ -15,11 +16,11 @@ export class EstimatePricesController {
 
     const data = await new EstimatePriceUberService().getPrices(
       latPickup,
-      longPickup,
+      longPickup, 
       latDropOff,
       longDropOff
     );
-    
     return response.json(data).status(200);
   }
+  
 }

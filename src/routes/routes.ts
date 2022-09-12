@@ -10,12 +10,23 @@ const router = Router();
 
 const estimatePricesController = new EstimatePricesController();
 
+router.use(
+  "/api",
+    //auth.authMiddleware
+
+)
 //API ROUTES
 router.get(
   "/api/get-prices/:dropoff/:pickup",
-  //auth.authMiddleware,
   estimatePricesController.getPricesUber
 );
+
+router.get(
+  "/api/get-prices/:pickup",
+  
+  estimatePricesController.getPricesUber
+);
+
 
 router.get("/", async (request: Request, response: Response) => {
   return response.json({ success: "it works!" }).status(200);
